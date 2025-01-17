@@ -7,37 +7,43 @@ export default function Home() {
   const [url, setUlr] = useState("");
   const [shortUrl, setShortUrl] = useState("");
   const [data,setData]=useState("");
-  const submitHandler=(e)=>{
-    e.preventDefault();
+  const submitHandler=async(e)=>{
 
-    const myHeaders = new Headers();
-myHeaders.append("Content-Type", "application/json");
-
-const raw = JSON.stringify({
-  "originalLink": url,
-  "shortLink": shortUrl
-});
-
-const requestOptions = {
-  method: "POST",
-  headers: myHeaders,
-  body: raw,
-  redirect: "follow"
-};
-
-
-
-fetch(`${process.env.NEXT_PUBLIC_DOMAIN}/api`, requestOptions)
-  .then((response) => response.json())
-  .then((result) =>{
-    alert("success")
-      console.log(result);
-      setData(`${process.env.NEXT_PUBLIC_DOMAIN}/${result.data.shortLink}`)
-      setUlr("");
-      setShortUrl("");
+    try {
+      e.preventDefault();
+      await dbConnect()
+      const myHeaders = new Headers();
+  myHeaders.append("Content-Type", "application/json");
   
-  })
-  .catch((error) => console.error(error));
+  const raw = JSON.stringify({
+    "originalLink": url,
+    "shortLink": shortUrl
+  });
+  
+  const requestOptions = {
+    method: "POST",
+    headers: myHeaders,
+    body: raw,
+    redirect: "follow"
+  };
+  
+  
+  
+  fetch(`${process.env.NEXT_PUBLIC_DOMAIN}/api`, requestOptions)
+    .then((response) => response.json())
+    .then((result) =>{
+      alert("success")
+        console.log(result);
+        setData(`${process.env.NEXT_PUBLIC_DOMAIN}/${result.data.shortLink}`)
+        setUlr("");
+        setShortUrl("");
+    
+    })
+    .catch((error) => console.error(error));
+    }
+    catch (error) {
+      console.log(error);
+    }
   }
   return (
     <>
