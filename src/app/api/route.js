@@ -19,12 +19,11 @@ export const GET=async(req)=>{
 export const POST=async(req)=>{
 
   try {
-    // const body=await req.json()
-    const body=await req.body;
-    await dbConnect()
+    const body=await req.json()
+    // await dbConnect()
   
-    const userData=await new Link(body);
-    await userData.save()
+    // const userData=await new Link(body);
+    // await userData.save()
       return NextResponse.json(
           {
             message: "data saved successfully",
