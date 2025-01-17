@@ -3,20 +3,6 @@ import Link from "@/Models/linkModel"
 import { NextResponse } from "next/server"
 
 
-export const GET=async(req)=>{
-  
-         await dbConnect()
-
-    return NextResponse.json(
-        {
-          message: "hello from server",
-          success: true,
-        },
-    )   
-
-}
-
-
 export const POST=async(req)=>{
 
   try {

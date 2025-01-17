@@ -25,8 +25,9 @@ const requestOptions = {
   redirect: "follow"
 };
 
-// fetch("http://localhost:3000/api", requestOptions)
-fetch("/api", requestOptions)
+
+
+fetch(`/api`, requestOptions)
   .then((response) => response.json())
   .then((result) =>{
     alert("success")
