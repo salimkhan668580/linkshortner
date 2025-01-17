@@ -28,7 +28,9 @@ export const POST=async(req)=>{
           {
             message: "data saved successfully",
             success: true,
-            data:userData
+            // data:userData
+            data:body
+ 
           },
       )   
   
