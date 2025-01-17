@@ -2,7 +2,6 @@ import React from 'react';
 import { redirect } from 'next/navigation';
 import Link from '@/Models/linkModel';
 
-
 async function getLink({ params }) {
   const { sortname } = params;
   const data = await Link.findOne({ shortLink: sortname });
@@ -16,6 +15,7 @@ async function Page({ params }) {
   if (LinkData) {
     // Redirect to the originalLink if found
     redirect(LinkData.originalLink);
+   
   } else {
     // Handle case where no Link data is found
     return <div>Link not found</div>;
