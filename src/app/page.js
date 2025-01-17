@@ -32,7 +32,7 @@ fetch(`/api`, requestOptions)
   .then((result) =>{
     alert("success")
       console.log(result);
-      setData(`${process.env.NEXT_DOMAIN}/${result.data.shortLink}`)
+      setData(`${process.env.NEXT_PUBLIC_DOMAIN}/${result.data.shortLink}`)
       setUlr("");
       setShortUrl("");
   
