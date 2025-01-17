@@ -1,5 +1,6 @@
 import mongoose from "mongoose";
 
+
 const LinkSchema = new mongoose.Schema({
   originalLink: String,
   shortLink: {
