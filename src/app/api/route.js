@@ -20,16 +20,17 @@ export const POST=async(req)=>{
 
   try {
     const body=await req.json()
-    // await dbConnect()
+    await dbConnect()
   
-    // const userData=await new Link(body);
-    // await userData.save()
+    const userData=await new Link(body);
+    await userData.save()
       return NextResponse.json(
           {
             message: "data saved successfully",
             success: true,
             // data:userData
-            data:body
+            data:body,
+            userData:userData
  
           },
       )   
