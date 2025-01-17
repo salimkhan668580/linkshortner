@@ -27,7 +27,7 @@ const requestOptions = {
 
 
 
-fetch(`/api`, requestOptions)
+fetch(`${process.env.NEXT_PUBLIC_DOMAIN}/api`, requestOptions)
   .then((response) => response.json())
   .then((result) =>{
     alert("success")
