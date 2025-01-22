@@ -51,7 +51,7 @@ export default function Home() {
     <>
       <div className="md:w-full bg-gray-400 flex flex-col md:h-screen  items-center justify-center">
         <div className=" md:w-[60%] h-[70%] text-center bg-gray-600 rounded-lg shadow">
-          <div className=" mx-auto pt-5 md:w-full md:xh-screen text-center items-center">
+          <div className=" mx-auto pt-5 md:w-full h-screen text-center items-center">
             <h5 className="text-white text-xl font-bold">Shortner Link</h5>
             <p className="text-gray-300 text-xl">
               A simple and secure URL shortener
