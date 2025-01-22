@@ -4,6 +4,7 @@ import dbConnect from "@/lib/dbConnections";
 import { useState } from "react";
 
 export default function Home() {
+  const [isLoading,setLoading] = useState(false)
   const [url, setUlr] = useState("");
   const [shortUrl, setShortUrl] = useState("");
   const [data,setData]=useState("");
@@ -27,11 +28,12 @@ export default function Home() {
     redirect: "follow"
   };
   
-  
+  setLoading(true)
   
   fetch(`${process.env.NEXT_PUBLIC_DOMAIN}/api`, requestOptions)
     .then((response) => response.json())
     .then((result) =>{
+      setLoading(false)
       alert("success")
         console.log(result);
         setData(`${process.env.NEXT_PUBLIC_DOMAIN}/${result.data.shortLink}`)
@@ -76,7 +78,8 @@ export default function Home() {
                 className="mt-5 bg-green-500 text-white w-full md:w-1/2 px-4 py-2  rounded-lg hover:bg-green-600"
                 type="submit"
               >
-                Shorten
+                {isLoading? "Loading...":"Shorten"}
+             
               </button>
             </form>
           
