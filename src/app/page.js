@@ -49,9 +49,10 @@ export default function Home() {
   }
   return (
     <>
-      <div className="md:w-full bg-gray-400 flex flex-col md:h-screen  items-center justify-center">
-        <div className=" md:w-[60%] h-[70%] text-center bg-gray-600 rounded-lg shadow">
-          <div className=" mx-auto pt-5 md:w-full h-screen text-center items-center">
+      <div className="md:w-full bg-gray-400 flex flex-col h-screen  items-center justify-center">
+        {/* <div className=" md:w-[60%] w-full  h-screen md:h-[70%] text-center bg-gray-600 rounded-lg shadow"> */}
+        <div className="md:w-[60%] w-full h-screen md:h-[70%] text-center bg-gray-600 rounded-lg shadow flex justify-center items-center">
+          <div className=" pt-5 md:w-full text-center">
             <h5 className="text-white text-xl font-bold">Shortner Link</h5>
             <p className="text-gray-300 text-xl">
               A simple and secure URL shortener
@@ -78,7 +79,7 @@ export default function Home() {
                 className="mt-5 bg-green-500 text-white w-full md:w-1/2 px-4 py-2  rounded-lg hover:bg-green-600"
                 type="submit"
               >
-                {isLoading? "Loading...":"Shorten"}
+                {isLoading? "Loading...":"Short URL"}
              
               </button>
             </form>
