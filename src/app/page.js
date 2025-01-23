@@ -60,7 +60,7 @@ export default function Home() {
 
             <form className="px-8 justify-center" onSubmit={submitHandler}>
               <input
-                className="border-2 border-gray-400 my-4 md:w-1/2 px-4 py-2 rounded-lg focus:outline-none"
+                className="border-2 text-black border-gray-400 my-4 md:w-1/2 px-4 py-2 rounded-lg focus:outline-none"
                 type="text"
                 placeholder="Enter your long URL"
                 value={url}
@@ -68,7 +68,7 @@ export default function Home() {
               />
               <br />
               <input
-                className="border-2 border-gray-400 md:w-1/2  py-2 px-4 rounded-lg focus:outline-none"
+                className="border-2 text-black border-gray-400 md:w-1/2  py-2 px-4 rounded-lg focus:outline-none"
                 type="text"
                 placeholder="Enter your link name"
                 value={shortUrl}
